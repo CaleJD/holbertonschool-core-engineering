@@ -1,0 +1,7 @@
+#!/usr/bin/env python3
+
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+
+for i in alphabet:
+    if i != 'e' and i != 'q':
+        print("{0}".format(i), end='')

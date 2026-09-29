@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 def pow(a, b):
-    i = 0
+    i = 1
     result = 0
     while i < b:
         power = a

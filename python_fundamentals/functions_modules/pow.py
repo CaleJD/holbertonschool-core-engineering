@@ -6,12 +6,12 @@ def pow(a, b):
         b = abs(b)
 
         for i in range(b):
-            result = a
+            result *= a
 
         result = 1 / result
 
     else:
         for i in range(b):
-            result = a
+            result *= a
 
     return result

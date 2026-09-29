@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-import add_0
+from add_0 import add_0
 
 result = add(1, 2)
 print(f"{a} + {b} = {result}")

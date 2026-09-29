@@ -4,10 +4,11 @@ def pow(a, b):
     i = 1
     result = 0
     if b < 0:
+        a = abs(a)
         b = abs(b)
         result = 0
         while i < b:
-            power = abs(a)
+            power = a
             result += a * power
             i = i + 1
         result = 1 / result

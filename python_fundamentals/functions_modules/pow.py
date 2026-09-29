@@ -1,19 +1,15 @@
 #!/usr/bin/env python3
 
 def pow(a, b):
-    i = 1
     result = 0
     if b < 0:
-        a = abs(a)
         b = abs(b)
         result = 0
-        while i < b:
+        for i in range(b):
             result *= a
-            i = i + 1
         result = 1 / result
         return result
     else:
-        while i < b:
+        for i in range(b):
             result *= a
-            i = i + 1
         return result

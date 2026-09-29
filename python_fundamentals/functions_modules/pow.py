@@ -7,7 +7,7 @@ def pow(a, b):
         b = abs(b)
         result = 0
         while i < b:
-            power = a
+            power = abs(a)
             result += a * power
             i = i + 1
         result = 1 / result

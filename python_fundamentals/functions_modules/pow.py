@@ -2,7 +2,7 @@
 
 def pow(a, b):
     i = 1
-    result = 0
+    result = 1
     if b < 0:
         a = abs(a)
         b = abs(b)

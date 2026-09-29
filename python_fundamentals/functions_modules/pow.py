@@ -8,14 +8,12 @@ def pow(a, b):
         b = abs(b)
         result = 0
         while i < b:
-            power = a
-            result += a * power
+            result *= a
             i = i + 1
         result = 1 / result
         return result
     else:
         while i < b:
-            power = a
-            result += a * power
+            result *= a
             i = i + 1
         return result

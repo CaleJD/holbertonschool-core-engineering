@@ -4,7 +4,6 @@ def pow(a, b):
     result = 0
     if b < 0:
         b = abs(b)
-        result = 0
         for i in range(b):
             result *= a
         result = 1 / result

@@ -6,5 +6,5 @@ def pow(a, b):
     while i < b:
         power = a
         result += a * power
-        print(f"{result}")
         i = i + 1
+    return result

@@ -6,7 +6,7 @@ a = 10
 b = 5
 res = 0
 calcs = [add, sub, mul, div]
-
-for i in calcs:
-    res = i(a, b)
-    print("{}".format(res))
+if __name__ == "__main__":
+    for i in calcs:
+        res = i(a, b)
+        print("{}".format(res))

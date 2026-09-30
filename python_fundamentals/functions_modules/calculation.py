@@ -9,4 +9,4 @@ calcs = [add, sub, mul, div]
 
 for i in calcs:
     res = i(a, b)
-    print(f"{res}")
+    print("{}".format(res))

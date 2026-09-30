@@ -5,15 +5,8 @@ from calculator_1 import(add, sub, mul, div)
 a = 10
 b = 5
 res = 0
+calcs = [add, sub, mul, div]
 
-res = add(a, b)
-print(f"{res}")
-
-res = sub(a, b)
-print(f"{res}")
-
-res = mul(a, b)
-print(f"{res}")
-
-res = div(a, b)
-print(f"{res}")
+for i in calcs:
+    res = i(a, b)
+    print(f"{res}")

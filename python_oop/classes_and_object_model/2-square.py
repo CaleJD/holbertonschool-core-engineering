@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+"""Module for the Square class"""
 
 class Square:
     """This class represents a square."""

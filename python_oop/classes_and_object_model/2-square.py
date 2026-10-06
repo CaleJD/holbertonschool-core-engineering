@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Module for the Square class"""
 
+
 class Square:
     """This class represents a square."""
-
     def __init__(self, size):
         """Initialize the square with validations for the size attribute."""
         if not isinstance(size, int):

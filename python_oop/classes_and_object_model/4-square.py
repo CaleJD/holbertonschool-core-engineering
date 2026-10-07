@@ -15,9 +15,11 @@ class Square:
     def area(self):
         """"Finds area of square by multiplying size by size"""
         return self.__size * self.__size
+
     @property
     def size(self):
         return self.__size
+
     @size.setter
     def size(self, size):
         if not isinstance(size, int):

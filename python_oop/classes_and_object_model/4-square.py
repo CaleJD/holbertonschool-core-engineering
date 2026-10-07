@@ -15,11 +15,11 @@ class Square:
     def area(self):
         """"Finds area of square by multiplying size by size"""
         return self.__size * self.__size
-
+    @property
     def size(self):
         return self.__size
-
+    @size.setter
     def size(self, size):
         if size < 0:
             raise ValueError("Size cannot be negative")
-            self.__size = size
+        self.__size = size

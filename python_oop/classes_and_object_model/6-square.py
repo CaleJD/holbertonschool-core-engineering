@@ -48,3 +48,4 @@ class Square:
             for width in range(self.size):
                 print("#", end='')
             print()
+        print()

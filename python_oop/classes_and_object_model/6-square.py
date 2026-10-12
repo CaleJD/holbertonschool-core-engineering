@@ -56,6 +56,8 @@ class Square:
         if self.size <= 0:
             print()
             return
+        for space in range(self.position[1]):
+            print()
         for height in range(self.size):
             print(" " * self.position[0], end='')
             for width in range(self.size):

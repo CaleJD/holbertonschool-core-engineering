@@ -1,68 +1,56 @@
-#!/usr/bin/env python3
-"""Module for the Rectangle class"""
+#!/usr/bin/python3
+"""Defines a Rectangle class."""
 
 
 class Rectangle:
-    """This class represents a rectangle."""
-    def __init__(self, size=(0, 0), position=(0, 0)):
-        self.size = size
-        self.position = position
+    """Represents a rectangle."""
+
+    def __init__(self, width=0, height=0):
+        self.width = width
+        self.height = height
+
+    @property
+    def width(self):
+        return self.__width
+
+    @width.setter
+    def width(self, value):
+        if not isinstance(value, int):
+            raise TypeError("width must be an integer")
+        if value < 0:
+            raise ValueError("width must be >= 0")
+        self.__width = value
+
+    @property
+    def height(self):
+        return self.__height
+
+    @height.setter
+    def height(self, value):
+        if not isinstance(value, int):
+            raise TypeError("height must be an integer")
+        if value < 0:
+            raise ValueError("height must be >= 0")
+        self.__height = value
 
     def area(self):
-        """"Finds area of rectangle by multiplying size by size"""
-        return self.__size[0] * self.__size[1]
+        return self.__width * self.__height
 
-    def __str__(self):
-        if self.size[0] == 0 or self.size[1] == 0:
-            return ""
-        result = ""
-        for _ in range(self.position[1]):
-            result += "\n"
-        for height in range(self.size[0]):
-            result += " " * self.position[0]
-            for width in range(self.size[1]):
-                result += "#"
-            result += "\n"
-        return result
-
-    @property
-    def size(self):
-        return self.__size
-
-    @size.setter
-    def size(self, size):
-        if (
-            not isinstance(size, tuple)
-            or len(size) != 2
-            or not all(isinstance(value, int) for value in size)
-            or any(value < 0 for value in size)
-        ):
-            raise TypeError("size must be a tuple of 2 positive integers")
-        self.__size = size
-
-    @property
-    def position(self):
-        return self.__position
-
-    @position.setter
-    def position(self, position):
-        if (
-            not isinstance(position, tuple)
-            or len(position) != 2
-            or not all(isinstance(value, int) for value in position)
-            or any(value < 0 for value in position)
-        ):
-            raise TypeError("position must be a tuple of 2 positive integers")
-        self.__position = position
+    def perimeter(self):
+        if self.__width == 0 or self.__height == 0:
+            return 0
+        return 2 * (self.__width + self.__height)
 
     def my_print(self):
-        if self.size[0] <= 0 or self.size[1] <= 0:
+        if self.__width == 0 or self.__height == 0:
             print()
             return
-        for space in range(self.position[1]):
+        for _ in range(self.__height):
+            for _ in range(self.__width):
+                print("#", end="")
             print()
-        for height in range(self.size[0]):
-            print(" " * self.position[0], end='')
-            for width in range(self.size[1]):
-                print("#", end='')
-            print()
+
+    def __str__(self):
+        if self.__width == 0 or self.__height == 0:
+            return ""
+        return "\n".join("#" * self.__width for _ in range(self.__height))

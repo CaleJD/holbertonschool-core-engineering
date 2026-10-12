@@ -23,7 +23,7 @@ class Square:
             for width in range(self.size):
                 result += "#"
             if height < self.size - 1:
-               result += "\n"
+                result += "\n"
         return result
 
     @property

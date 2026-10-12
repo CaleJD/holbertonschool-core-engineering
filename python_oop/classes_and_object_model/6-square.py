@@ -12,6 +12,20 @@ class Square:
         """"Finds area of square by multiplying size by size"""
         return self.__size * self.__size
 
+    def __str__(self):
+        if self.size == 0:
+            return ""
+        result = ""
+        for _ in range(self.position[1]):
+            result += "\n"
+        for height in range(self.size):
+            result += " " * self.position[0]
+            for width in range(self.size):
+                result += "#"
+            if height < self.size - 1:
+               result += "\n"
+        return result
+
     @property
     def size(self):
         return self.__size

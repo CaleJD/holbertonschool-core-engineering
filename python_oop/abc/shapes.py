@@ -11,7 +11,7 @@ class Shape(ABC):
     @abstractmethod
     def area(self):
         pass
-    
+
     @abstractmethod
     def perimeter(self):
         pass
@@ -50,5 +50,5 @@ class Rectangle(Shape):
 
 def shape_info(shape):
     """Prints area and perimeter of a shape"""
-    print("Area: ", Shape.area())
-    print("Perimeter: ", Shape.perimeter())
+    print("Area: ", shape.area())
+    print("Perimeter: ", shape.perimeter())

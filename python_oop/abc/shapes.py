@@ -8,9 +8,11 @@ import math
 
 class Shape(ABC):
     """Defines abstract class for Shape"""
+    @abstractmethod
     def area(self):
         pass
-
+    
+    @abstractmethod
     def perimeter(self):
         pass
 
@@ -30,14 +32,13 @@ class Circle(Shape):
         """Returns perimeter of cirlce"""
         return 2 * math.pi * self.__radius
 
-
 class Rectangle(Shape):
     """Initialises Rectangle subclass of Shape"""
 
-    def __init__(self, height, width):
+    def __init__(self, width, height):
         """Represents a rectangle defined by its height and width"""
-        self.__height = height
         self.__width = width
+        self.__height = height
 
     def area(self):
         """Returns area of rectangle"""
@@ -47,7 +48,7 @@ class Rectangle(Shape):
         """Returns perimeter of rectangle"""
         return 2 * (self.__width + self.__height)
 
-def shape_info(Shape):
+def shape_info(shape):
     """Prints area and perimeter of a shape"""
-    print("Area: ", Shape.area)
-    print("Perimeter: ", Shape.perimeter)
+    print("Area: ", Shape.area())
+    print("Perimeter: ", Shape.perimeter())

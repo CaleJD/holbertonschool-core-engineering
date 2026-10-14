@@ -7,7 +7,7 @@ class BaseGeometry:
 
     def area(self):
         """Subclasses must implement this method."""
-        return "area() is not implemented"
+        raise Exception("area() is not implemented")
 
     def integer_validator(self, name, value):
         """Validate that value is a positive integer."""

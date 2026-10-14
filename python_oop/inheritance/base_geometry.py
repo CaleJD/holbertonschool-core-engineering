@@ -1,11 +1,17 @@
 #!/usr/bin/env python3
+"""Defines a base class for geometric shapes"""
 
-from dataclasses import Type
+
 class BaseGeometry:
+    """Base class for geometric shapes."""
+
     def area(self):
+        """Subclasses must implement this method."""
         return self.area
+
     def integer_validator(self, name, value):
+        """Validate that value is a positive integer."""
         if not isinstance(value, int):
-            raise TypeError ("<name> must be an integer")
-        if value < 0:
-            raise ValueError ("<name> must be greater than 0")
+            raise TypeError("{} must be an integer".format(name))
+        if value <= 0:
+            raise ValueError("{} must be greater than 0".format(name))

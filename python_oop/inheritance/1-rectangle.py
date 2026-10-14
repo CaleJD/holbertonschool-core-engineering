@@ -1,6 +1,4 @@
 #!/usr/bin/env python3
-"""Defines a base class for geometric shapes"""
-
 
 BaseGeometry = __import__('base_geometry').BaseGeometry
 

@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
+"""Defines a subclass for a rectangle"""
+
 
 BaseGeometry = __import__('base_geometry').BaseGeometry
 
 
 class Rectangle(BaseGeometry):
-    """Defines a subclass for a rectangle"""
     def __init__(self, width, height):
         self.integer_validator("width", width)
         self.__width = width

@@ -5,7 +5,6 @@ import websockets
 
 
 async def connect_and_send(uri: str, text: str) -> str:
-    print("Hello Websocket")
     async with websockets.connect(uri) as ws:
         await ws.send(text)
         reply = await ws.recv()
@@ -14,6 +13,7 @@ async def connect_and_send(uri: str, text: str) -> str:
 
 async def main():
     response = await connect_and_send("ws://127.0.0.1:8765", "demo")
+    print("Hello Websocket")
     print(response, end="")
 
 

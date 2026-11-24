@@ -12,16 +12,20 @@ def valid_reply(reply):
         raise ValueError("ERR:EMPTY")
 
 
-async def connect_and_send(uri: str, text: str) -> str:
-    async with websockets.connect(uri) as ws:
-        await ws.send(text)
-        reply = await ws.recv()
-        return OK + reply
+async def handler(websocket):
+    async for message in websocket:
+        try:
+            valid_reply(message)
+        except ValueError as error:
+            await websocket.send(str(error))
+        else:
+            await websocket.send(OK + message)
 
 
 async def main():
-    response = await connect_and_send("ws://127.0.0.1:8765", "Hello WebSocket")
-    print(response, end="")
+    async with websockets.serve(handler, "127.0.0.1", 8765):
+        print("Hello WebSocket")
+        await asyncio.Future()
 
 
 if __name__ == "__main__":

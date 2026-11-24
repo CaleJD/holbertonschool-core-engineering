@@ -9,9 +9,11 @@ OK = "U:"
 connected_clients = {}
 next_id = itertools.count(1)
 
+
 def valid_reply(reply):
     if not reply.strip():
         raise ValueError("ERR:EMPTY")
+
 
 async def send_to(client_id, m):
     ws = connected_clients.get(client_id)
@@ -22,6 +24,7 @@ async def send_to(client_id, m):
     except websockets.ConnectionClosed:
         return False
     return True
+
 
 async def handler(websocket):
     client_id = next(next_id)

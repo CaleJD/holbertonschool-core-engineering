@@ -5,6 +5,7 @@ import websockets
 
 
 async def connect_and_send(uri: str, text: str) -> str:
+    print("Hello Websocket")
     async with websockets.connect(uri) as ws:
         await ws.send(text)
         reply = await ws.recv()

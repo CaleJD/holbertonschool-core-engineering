@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>Echo</h1>
+  <input id="msg" placeholder="Type a message">
+  <button onclick="send()">Send</button>
+  <p id="log"></p>
+  <script>
+    const ws = new WebSocket(`ws://${location.host}/ws`);
+    ws.onmessage = (event) => {
+      document.getElementById("log").textContent += event.data + "\\n";
+    };
+    function send() {
+      const input = document.getElementById("msg");
+      ws.send(input.value);
+      input.value = "";
+    }
+  </script>
+</body>
+</html>

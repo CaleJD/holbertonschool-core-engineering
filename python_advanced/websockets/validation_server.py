@@ -4,7 +4,7 @@ import asyncio
 import websockets
 
 
-OK = "OK: "
+OK = "OK:"
 
 
 def valid_reply(reply):

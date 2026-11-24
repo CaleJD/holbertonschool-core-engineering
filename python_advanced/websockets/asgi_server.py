@@ -10,7 +10,7 @@ HTML = """
 <!DOCTYPE html>
 <html>
 <body>
-  <h1>Echo</h1>
+  <h1>WebSocket Echo</h1>
   <input id="msg" placeholder="Type a message">
   <button onclick="send()">Send</button>
   <p id="log"></p>
